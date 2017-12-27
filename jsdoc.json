@@ -1,0 +1,22 @@
+{
+    "plugins": [],
+    "recurseDepth": 10,
+    "source": {
+        "exclude": ["node_modules/", "plugins", "public"],
+        "include": ["."],
+        "includePattern": ".+\\.js(doc|x)?$",
+        "excludePattern": "(^|\\/|\\\\)_"
+    },
+    "opts": {
+        "encoding": "utf8",
+        "destination": "./docs/doc/",
+        "recurse": true,
+        "tutorials": "./docs/tutorial/"
+    },
+    "templates": {
+        "default": {
+            "includeDate": false
+        }
+    },
+    "sourceType": "module"
+}

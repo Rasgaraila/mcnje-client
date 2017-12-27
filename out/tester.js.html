@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>
+        One's Craft: Source: tester.js
+    </title>
+    <script src="scripts/prettify/prettify.js">
+    </script>
+    <script src="scripts/prettify/lang-css.js">
+    </script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/prettify-tomorrow.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc-default.css">
+</head>
+
+<body>
+    <div id="main">
+        <h1 class="page-title">Source: tester.js</h1>
+        
+
+
+
+    
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>/*
+ * tester.js - Copyright (C) 2017-2018
+ *
+ * Gives the ablity to test files, See test.js.
+ *
+ * File is licenced under project's global licence.
+ * See Licence.txt for more details.
+ */
+/**
+ * @file A alternative assert module
+ * @module tester
+ * @author Redcrafts group and Contributors
+ */
+/* eslint eqeqeq: 0, id-length: 0 */
+var tools,
+    incr;
+/**
+ * @namespace
+ * @private
+ */
+tools = {
+    /**
+     * a = b ?
+     *
+     * @param {*} a
+     * @param {*} b
+     *
+     * @returns {boolean}
+     */
+    isEqual: (a, b) => (a == b),
+    /**
+     * a =/= b ?
+     *
+     * @param {*} a
+     * @param {*} b
+     *
+     * @returns {boolean}
+     */
+    isNotEqual: (a, b) => (a != b),
+    /**
+     * a has b ?
+     *
+     * @param {*} a
+     * @param {*} b
+     *
+     * @returns {boolean}
+     */
+    contains: (a, b) => (b in a),
+    /**
+     * a dont have b ?
+     *
+     * @param {*} a
+     * @param {*} b
+     *
+     * @returns {boolean}
+     */
+    notContains: (a, b) => (!(b in a)),
+    /**
+     * type of a = type of b ?
+     *
+     * @param {*} a
+     * @param {*} b
+     *
+     * @returns {boolean}
+     */
+    is: (a, b) => (typeof a == typeof b),
+    /**
+     * type of a =/= type of b ?
+     *
+     * @param {*} a
+     * @param {*} b
+     *
+     * @returns {boolean}
+     */
+    isNot: (a, b) => (typeof a != typeof b),
+    /**
+     * a &lt; b ?
+     *
+     * @param {*} a
+     * @param {*} b
+     *
+     * @returns {boolean}
+     */
+    isLessThan: (a, b) => (a &lt; b),
+    /**
+     * a > b ?
+     *
+     * @param {*} a
+     * @param {*} b
+     *
+     * @returns {boolean}
+     */
+    isGreaterThan: (a, b) => (a > b),
+    /**
+     * a >= b ?
+     *
+     * @param {*} a
+     * @param {*} b
+     *
+     * @returns {boolean}
+     */
+    isGreaterEqual: (a, b) => (a >= b),
+    /**
+     * a &lt;= b ?
+     *
+     * @param {*} a
+     * @param {*} b
+     *
+     * @returns {boolean}
+     */
+    isLessEqual: (a, b) => (a &lt;= b),
+    /**
+     * a &amp; b ?
+     *
+     * @param {*} a
+     * @param {*} b
+     *
+     * @returns {boolean}
+     */
+    and: (a, b) => (a &amp;&amp; b),
+    /**
+     * a / b ?
+     *
+     * @param {*} a
+     * @param {*} b
+     *
+     * @returns {boolean}
+     */
+    or: (a, b) => (a || b),
+    /**
+     * not a
+     *
+     * @param {*} a
+     *
+     * @returns {boolean}
+     */
+    not: (a) => (!a)
+};
+incr = 0;
+
+/**
+ * Tester - Creates a test sequence
+ */
+class Tester {
+    /**
+     * @param  {(string|number)} name A name to make a contrast between tests
+     * @param  {function} func The function which going to be runned
+     */
+    constructor(name = `Anm${++incr}`, func) {
+        this.name = name.toUpperCase();
+        this.func = func;
+    }
+
+    /**
+     * onerror - The function to set handler to errors
+     *
+     * @param  {function} func The function to set as handler
+     * @returns {object} The Main class will return
+     */
+    onerror(func) {
+        this.error = func;
+        return this;
+    };
+
+    /**
+     * onsuccess - The function to set handler to success
+     *
+     * @param  {function} func The function to set as handler
+     * @returns {object} The Main class will return
+     */
+    onsuccess(func) {
+        this.success = func;
+        return this;
+    };
+
+    /**
+     * run - Will run the test
+     *
+     * @returns {boolean} Will say if all resualts are true
+     */
+    run() {
+        var out = this.func(tools, new CustomArray()),
+            outlen = out.length;
+        for (var i = 0; i &lt; outlen; i++)
+            if (out[i].status == true)
+                this.success.bind(this, out[i].desc)();
+            else
+                this.error.bind(this, out[i].desc)();
+        return (out.map(a => (a.status == false)).indexOf(true) == -1);
+    };
+}
+
+/**
+ * @extends Array
+ * @private
+ */
+class CustomArray extends Array {
+    /**
+     * add - Addes a option to array
+     *
+     * @param {boolean} status
+     * @param {string} desc [REST]
+     *
+     * @returns {object} The object it self
+     */
+    add(status, ...desc) {
+        this.push({
+            status,
+            desc: desc.join("\n")
+        });
+        return this;
+    };
+}
+
+module.exports = Tester;
+</code></pre>
+        </article>
+    </section>
+
+
+
+
+    </div>
+    <nav>
+        <h2><a href="index.html">Home</a></h2><h3>Modules</h3><ul><li><a href="module-event.html">event</a></li><li><a href="module-tester.html">tester</a></li></ul><h3>Classes</h3><ul><li><a href="module-event-Event.html">Event</a></li><li><a href="module-event-EventHandlers.html">EventHandlers</a></li><li><a href="module-tester-Tester.html">Tester</a></li></ul><h3>Tutorials</h3><ul><li><a href="tutorial-getting-started.html">getting-started</a></li></ul>
+    </nav>
+    <br class="clear">
+    <footer>
+        Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.5.5</a>
+        
+    </footer>
+    <script>
+        prettyPrint();
+    </script>
+    <script src="../scripts/linenumber.js">
+    </script>
+</body>
+
+</html>

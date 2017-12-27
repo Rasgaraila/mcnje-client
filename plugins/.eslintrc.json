@@ -1,0 +1,10 @@
+{
+    "globals": {
+        "require": true,
+        "mod": false
+    },
+    "rules": {
+        "no-global-assign": 1,
+        "no-restricted-globals": [2, "require"]
+    }
+}

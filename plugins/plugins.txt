@@ -1,0 +1,21 @@
+$base[esdmr]
+$minecraft[esdmr]
+-minecraft(1,0,0)=base(1,0,0)
++minecraft(1,0,0)
+*
+names of plugins are like this:
+NAME-MAJOR-MINOR-PATCH.js
+Note that MAJOR, MINOR and PATCH are in hexadecimal and only in range of (0-ff).
+Also note that the plugins name will be: NAME(MAJOR,MINOR,PATCH)
+
+options starting with $ gives a plugin a author (parser first action)
+options starting with - sets a deps for an plugin (parser second action)
+options starting with + adds a plugin (parser third action)
+lines stating with * makes the parser ignore rest of the file(make's loading
+faster)
+
+Note:
+Utilities are type of plugins that return object with functions in it.
+They may not be added through plugins list; because they will
+automatically be ignored by parser, but still, its recommended that you don't
+add plugins here.
