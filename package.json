@@ -43,6 +43,9 @@
     "homepage": "https://github.com/mcnje/mcnje-client#readme",
     "eslintIgnore": [
         "package.json",
-        "package-lock.json"
+        "package-lock.json",
+        "jquery.js",
+        "metro.js",
+        "angular.js"
     ]
 }
