@@ -47,6 +47,9 @@
         "id-length": 1,
         "camelcase": 1,
         "new-cap": 1,
-        "no-underscore-dangle": 1
+        "no-underscore-dangle": 1,
+        "curly": 1,
+        "one-var": [1, "never"],
+        "padded-blocks": [1, "never"]
     }
 }

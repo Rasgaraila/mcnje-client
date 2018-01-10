@@ -1,0 +1,35 @@
+<svg width="256" height="256" xmlns="http://www.w3.org/2000/svg"
+  xmlns:svg="http://www.w3.org/2000/svg">
+    <g>
+        <line fill="none" stroke="#ffffff" x1="10" y1="85" x2="96" y2="42"
+          stroke-linecap="round" stroke-linejoin="round" stroke-width="3"/>
+        <line fill="none" stroke="#ffffff" x1="10" y1="85" x2="10" y2="170"
+          stroke-linecap="round" stroke-linejoin="round" stroke-width="3"/>
+        <line fill="none" stroke="#ffffff" x1="96" y1="42" x2="162" y2="74"
+          stroke-linecap="round" stroke-linejoin="round" stroke-width="3"/>
+        <line fill="none" stroke="#ffffff" x1="95" y1="213" x2="10" y2="170"
+          stroke-linecap="round" stroke-linejoin="round" stroke-width="3"/>
+        <line fill="none" stroke="#ffffff" x1="96" y1="213" x2="181" y2="170"
+          stroke-linecap="round" stroke-linejoin="round" stroke-width="3"/>
+        <line fill="none" stroke="#ffffff" x1="181" y1="142" x2="181" y2="169"
+          stroke-linecap="round" stroke-linejoin="round" stroke-width="3"/>
+        <line fill="none" stroke="#ffffff" x1="181" y1="102" x2="181" y2="113"
+          stroke-linejoin="round" stroke-linecap="round" stroke-width="3"/>
+        <line fill="none" stroke="#ffffff" x1="131" y1="109" x2="96" y2="126"
+          stroke-linejoin="round" stroke-linecap="round" stroke-width="3"/>
+        <line fill="none" stroke="#ffffff" x1="96" y1="126" x2="11" y2="85"
+          stroke-linejoin="round" stroke-linecap="round" stroke-width="3"/>
+        <line fill="none" stroke="#ffffff" x1="125" y1="119" x2="96" y2="134"
+          stroke-linejoin="round" stroke-linecap="round" stroke-width="3"/>
+        <line fill="none" stroke="#ffffff" x1="96" y1="134" x2="10" y2="92"
+          stroke-linejoin="round" stroke-linecap="round"  stroke-width="3"/>
+    </g>
+    <g>
+        <path fill="#ffffff" stroke="#ffffff" stroke-width="3"
+          stroke-dasharray="null" stroke-linejoin="round" stroke-linecap="round"
+          d="m118.41801,135.68806c0,-2.17352 1.83324,-4 4.0148,-4l138.51053,0c2.18156,0 4.0148,1.82648 4.0148,4l0,4c0,2.17352 -1.83324,4 -4.0148,4l-138.51053,0c-2.18156,0 -4.0148,-1.82648 -4.0148,-4l0,-4z" transform="rotate(45 191.68806457519537,137.6880645751953)"/>
+        <path fill="#ffffff" stroke="#ffffff" stroke-width="3"
+          stroke-dasharray="null" stroke-linejoin="round" stroke-linecap="round"
+          d="m118.10653,190.36754c-6.18825,-146.00698 129.93227,-129.86255 129,-130c-114.77789,34.04184 -129.11554,130.01394 -129,130"/>
+    </g>
+</svg>
