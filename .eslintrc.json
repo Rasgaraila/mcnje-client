@@ -8,6 +8,7 @@
         "ecmaVersion": 8,
         "sourceType": "module"
     },
+    "parser": "typescript-eslint-parser",
     "rules": {
         "no-new-object": 1,
         "object-shorthand": 1,

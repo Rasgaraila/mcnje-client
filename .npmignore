@@ -1,5 +1,5 @@
+src
+logs
 repl.bat
 node_modules
 .vscode
-dist
-logs
