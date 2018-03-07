@@ -1,0 +1,30 @@
+This file is an explanation to usages of dependencies in this project.
+There is some grammar errors in this file (and I am sorry about that).
+Feel free to make changes to this file!
+
+1. Color (color)
+  There always been an important part of Mcnje which was cared about;
+  The personalization. With the Color dependency, we can edit colors
+  and blend them with other colors to make themes for main user
+  experience, although, it isn't used else where. ( Sadly :'( )
+
+2. Esprima (esprima)
+  This is the (future used) dependency which is used in parsing the
+  plugins. It's features are parsing and tokenizing Escript scripts,
+  but only the tockenizer (gonna be) used (to parse the import tags).
+
+
+3. Express (express)
+  Actually I am not going to talk about this one, because you have
+  probably guessed it already!
+
+4. Font Color Contrast (font-color-contrast)
+  This one is also used in theming. It helps to gather font color;
+  in contrast of the background. although in version 3 of the Color,
+  there is an "isWhite?" and "isGray?" feature, so we might be saying
+  bye to this dependency soon...
+
+5. INI (ini)
+  used primarly in ~~/main.js where ~/options.ini loads, but there is
+  a chance that it will be changed to a stable json dependency.
+
