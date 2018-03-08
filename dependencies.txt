@@ -2,7 +2,7 @@ This file is an explanation to usages of dependencies in this project.
 There is some grammar errors in this file (and I am sorry about that).
 Feel free to make changes to this file!
 
-1. Color (color)
+1. Color (colour)
   There always been an important part of Mcnje which was cared about;
   The personalization. With the Color dependency, we can edit colors
   and blend them with other colors to make themes for main user
